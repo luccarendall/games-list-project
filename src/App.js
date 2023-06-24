@@ -1,6 +1,4 @@
 import FetchComponent from './components/fetchApi';
-import logo from './logo.svg';
-import './App.css';
 
 function App() {
   return (
