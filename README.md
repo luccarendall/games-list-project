@@ -5,7 +5,7 @@
 <br/>
 Este é um aplicativo React que permite aos usuários pesquisar jogos usando uma barra de pesquisa. O aplicativo busca dados de jogos de uma API e os exibe em formato de lista. Os usuários podem inserir um termo de pesquisa na barra de pesquisa, e o aplicativo filtrará os jogos com base no título.
 
-## Acesse a aplicação [clicando aqui](google.com)
+## Acesse a aplicação [clicando aqui](https://games-list-project.vercel.app/)
 
 ### Instalação
 
