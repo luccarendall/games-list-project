@@ -41,7 +41,13 @@ Você pode continuar pesquisando diferentes termos de pesquisa para refinar os r
 - Axios
 - CSS
 - Javascript
-  
+
+### O que faria em mais tempo
+- Componentizar cada estrutura respeitando o princípio da responsabilidade única
+- Usar Context ou Redux para gerenciar o estado global de forma mais dinâmica
+- Adicionar testes unitários
+- Adicionar botões para remover individualmente os filtros aplicados ou todos de uma vez
+
 ### Autor
 | [<img src="https://avatars.githubusercontent.com/u/92706411?v=4" width=115><br><sub>@luccarendall</sub>](https://github.com/LuccaRendall) |
 | :---: |
