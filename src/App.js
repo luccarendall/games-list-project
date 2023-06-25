@@ -6,7 +6,9 @@ const App = () => {
   const [apiData, setApiData] = useState();
   const [errMsg, setErrMsg] = useState('');
   const [titleFilter, setTitleFilter] = useState('');
-  const [filteredData, setFilteredData] = useState([]); // Dados filtrados
+  const [filteredData, setFilteredData] = useState([]);
+  const [genreFilter, setGenreFilter] = useState('');
+  const [genresList, setGenresList] = useState([]);
 
   useEffect(() => {
     let apiDataSuccessfully =  true; // Vou usar para verificar se a API retornou os dados com sucesso
@@ -30,6 +32,9 @@ const App = () => {
         const data = response.data;
         if (apiDataSuccessfully === true) {
           setApiData(data);
+          // https://stackoverflow.com/questions/63928416/how-does-new-setarray-work-in-javascript
+          const genres = [...new Set(data.map((game) => game.genre))];
+          setGenresList(genres);
         }
       } catch (error) {
         console.error(error);
@@ -72,9 +77,28 @@ const App = () => {
   //  console.log(target.value)
   }
 
+  const handleGenreFilter = (genre) => {
+    setGenreFilter(genre);
+  };
+
+  // Cria genres apenas c/ valores únicos dos gêneros encontrados nos dados retornados da API. Mesma lógica do filtro do titulo
+  useEffect(() => {
+    const filteredGames = apiData && apiData.filter(
+      (game) => game.genre.toLowerCase().includes(genreFilter.toLowerCase())
+    );
+
+    setFilteredData(filteredGames || []);
+  }, [genreFilter, apiData]);
+
   // lá no estado inicial setamos a mensagem de erro como strig vazia e ela só é preenchida caso dê algum problema e se isso acontecer essa mensagem é exibida em forma de span
   if (errMsg) {
     return <span className='err1'>{errMsg}</span>
+  }
+
+  const clearBtn = () => {
+    setGenreFilter('')
+    setTitleFilter('')
+
   }
 
  return (
@@ -82,9 +106,24 @@ const App = () => {
     {apiData !== undefined && apiData.length > 0 ? (
       <>
         <form>
-          <input type="text" onChange={handleTitleFilter} placeholder="Pesquisar" />
-          <button type="button" className="searchBtn">Pesquisar</button>
+          <input type="search" onChange={handleTitleFilter} placeholder="Pesquisar" />
+          <button type="button" onClick={ clearBtn } className='clearBtn'>Limpar filtros</button>
         </form>
+
+       <div className="genres">
+            {genresList.map((genre) => (
+              <label key={genre}>
+                <input
+                  type="checkbox"
+                  name="genre"
+                  value={genre}
+                  checked={genreFilter === genre}
+                  onChange={() => handleGenreFilter(genre)}
+                />
+                {genre}
+              </label>
+            ))}
+          </div>
 
         <ul className="list-game">
           {filteredData !== undefined && filteredData.length > 0 ? (

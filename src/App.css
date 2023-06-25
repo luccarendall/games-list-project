@@ -139,7 +139,6 @@ body::-webkit-scrollbar-thumb {
   form {
     display: flex;
     justify-content: space-around;
-    /* position: fixed; */
     top: 0;
     width: 100%;
     background-color: #292929;
@@ -149,16 +148,17 @@ body::-webkit-scrollbar-thumb {
     border-radius: 10px;
   }
 
-  input[type="text"] {
+  input[type="search"] {
     flex: 1;
     width: 80%;
     padding: 10px;
     border: none;
     border-radius: 5px;
     margin-right: 10px;
+    font-weight: bold;
   }
 
-  button.searchBtn {
+  button.clearBtn {
     padding: 8px 16px;
     border: none;
     border-radius: 5px;
@@ -167,3 +167,46 @@ body::-webkit-scrollbar-thumb {
     cursor: pointer;
   }
 
+  .genres {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    vertical-align: middle;
+    position: relative;
+    border: 3px solid #ffffff02;
+    box-shadow: 0 2px 4px #1f26875e;
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #ffffff;
+  }
+
+  .genres label {
+    margin-left: 3px;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    position: relative;
+    color: #ffffff;
+  }
+
+  .genres input {
+    margin-right: 3px;
+    background-color: #292929;
+    border: none;
+    padding: 8px;
+    color: #ffffff;
+    appearance: none;
+  }
+
+  .genres input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    background-color: transparent;
+  }
+
+  .genres input[type="checkbox"]:checked {
+    background-color: #292929;
+    border: 1px solid #292929;
+  }
