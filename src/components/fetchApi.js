@@ -1,7 +1,8 @@
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const FetchComponent = () => {
+  const [gameData, setGameData] = useState([]);
   useEffect(() => {
     const fetchAPI = async () => {
       try {
@@ -13,6 +14,7 @@ const FetchComponent = () => {
         const response = await axios.get(url, { headers });
         const data = response.data;
         console.log(data);
+        setGameData(data);
       } catch (error) {
         console.error(error);
       }
@@ -20,6 +22,17 @@ const FetchComponent = () => {
 
     fetchAPI();
   }, []);
-}
+  return (
+    <div class="card-game">
+      {gameData.map((game) => (
+        <div key={game.id}>
+          <h2>{game.title}</h2>
+          <img src={game.thumbnail} alt={game.title} />
+          <p>{game.short_description}</p>
+        </div>
+      ))}
+    </div>
+  );
+};
 
 export default FetchComponent;
