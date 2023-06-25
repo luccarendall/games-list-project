@@ -5,6 +5,8 @@ import './App.css';
 const App = () => {
   const [apiData, setApiData] = useState();
   const [errMsg, setErrMsg] = useState('');
+  const [titleFilter, setTitleFilter] = useState('');
+  const [filteredData, setFilteredData] = useState([]); // Dados filtrados
 
   useEffect(() => {
     let apiDataSuccessfully =  true; // Vou usar para verificar se a API retornou os dados com sucesso
@@ -42,35 +44,54 @@ const App = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const filteredGames = apiData && apiData.filter(
+      (game) => game.title.toLowerCase().includes(titleFilter.toLowerCase())
+    );
+    setFilteredData(filteredGames || []);
+  }, [titleFilter, apiData]);
+
+  // pegar valor do input
+  const handleTitleFilter = ({ target }) => {
+   setTitleFilter(target.value.toLowerCase());
+  //  console.log(target.value)
+  }
+
   // lá no estado inicial setamos a mensagem de erro como strig vazia e ela só é preenchida caso dê algum problema e se isso acontecer essa mensagem é exibida em forma de span
   if (errMsg) {
     return <span className='err1'>{errMsg}</span>
   }
 
-  return (
-    <div>
+ return (
+  <div>
     {apiData !== undefined && apiData.length > 0 ? (
       <>
         <form>
-          <input type="text" placeholder="Pesquisar" />
+          <input type="text" onChange={handleTitleFilter} placeholder="Pesquisar" />
           <button type="button" className="searchBtn">Pesquisar</button>
         </form>
 
         <ul className="list-game">
-          {apiData.map((game) => (
-            <li className="game-item" key={game.id}>
-              <h2 className="title">{game.title}</h2>
-              <img src={game.thumbnail} alt={game.title} />
-              <p>{game.short_description}</p>
-            </li>
-          ))}
+          {filteredData !== undefined && filteredData.length > 0 ? (
+            filteredData.map((game) => (
+              <li className="game-item" key={game.id}>
+                <h2 className="title">{game.title}</h2>
+                <img src={game.thumbnail} alt={game.title} />
+                <p>{game.short_description}</p>
+                <p id='genre'>{game.genre}</p>
+              </li>
+            ))
+          ) : (
+            <p className='err1'>Nenhum jogo encontrado</p>
+          )}
         </ul>
       </>
     ) : (
       <p className="loading"></p>
     )}
   </div>
-  );
+);
+
 }
 
 export default App;

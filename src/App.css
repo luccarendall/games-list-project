@@ -87,7 +87,11 @@ body {
   border-radius: 8px;
   box-shadow: 0 2px 4px #000000e6;
   margin-bottom: 5px;
+}
 
+#genre {
+  color: #141414;
+  margin-top: 5px;
 }
 
 /* SCROLL BAR */
