@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/games-list-project/static/css/main.b4c706c6.css",
+    "main.js": "/games-list-project/static/js/main.b36e833d.js",
+    "static/js/787.e2ad1e18.chunk.js": "/games-list-project/static/js/787.e2ad1e18.chunk.js",
+    "index.html": "/games-list-project/index.html",
+    "main.b4c706c6.css.map": "/games-list-project/static/css/main.b4c706c6.css.map",
+    "main.b36e833d.js.map": "/games-list-project/static/js/main.b36e833d.js.map",
+    "787.e2ad1e18.chunk.js.map": "/games-list-project/static/js/787.e2ad1e18.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b4c706c6.css",
+    "static/js/main.b36e833d.js"
+  ]
+}
