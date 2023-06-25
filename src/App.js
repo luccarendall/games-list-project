@@ -2,7 +2,7 @@ import FetchComponent from './components/fetchApi';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <FetchComponent />
     </div>
   );
