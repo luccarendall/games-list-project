@@ -69,8 +69,8 @@ body {
 }
 
 .game-item {
-  background-color: #ffffff0d;
-  border: 3px solid #ffffff2e;
+  background-color: #292929;
+  border: 3px solid #ffffff02;
   box-shadow: 0 2px 4px #1f26875e;
   padding: 10px;
   text-align: center;
@@ -130,3 +130,36 @@ body::-webkit-scrollbar-thumb {
     font-size: 3rem;
     overflow: hidden;
   }
+
+  /* SEARCH BAR */
+  form {
+    display: flex;
+    justify-content: space-around;
+    /* position: fixed; */
+    top: 0;
+    width: 100%;
+    background-color: #292929;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+
+  input[type="text"] {
+    flex: 1;
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+
+  button.searchBtn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #8a2ce2;
+    color: #fff;
+    cursor: pointer;
+  }
+
