@@ -5,6 +5,8 @@
 <br/>
 Este é um aplicativo React que permite aos usuários pesquisar jogos usando uma barra de pesquisa. O aplicativo busca dados de jogos de uma API e os exibe em formato de lista. Os usuários podem inserir um termo de pesquisa na barra de pesquisa, e o aplicativo filtrará os jogos com base no título.
 
+## Acesse a aplicação [clicando aqui](google.com)
+
 ### Instalação
 
 Para executar este aplicativo localmente, siga estas etapas:
@@ -21,7 +23,12 @@ Para executar este aplicativo localmente, siga estas etapas:
 
 Ao abrir o aplicativo, você verá uma barra de pesquisa no topo da página. Digite um termo de pesquisa na barra e os jogos serão carregados da API e exibidos em uma lista abaixo da barra de pesquisa. Se houver jogos correspondentes ao termo de pesquisa, eles serão exibidos com seus títulos, imagens e descrições curtas. Caso contrário, uma mensagem informando que nenhum jogo foi encontrado será exibida.
 
+<div align="center">
+<img src="https://media.giphy.com/media/1kgxjgjFbYdHGwv88x/giphy.gif" alt="Gif" width="600" height="240">
+  <br/>
 Você pode continuar pesquisando diferentes termos de pesquisa para refinar os resultados.
+</div>
+
 
 ### Funcionalidades
 
