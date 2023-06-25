@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './style/cardGame.css'
 
 const FetchComponent = () => {
   const [gameData, setGameData] = useState([]);
@@ -23,9 +24,9 @@ const FetchComponent = () => {
     fetchAPI();
   }, []);
   return (
-    <div class="card-game">
+    <div className="card-game">
       {gameData.map((game) => (
-        <div key={game.id}>
+        <div className="game-item" key={game.id}>
           <h2>{game.title}</h2>
           <img src={game.thumbnail} alt={game.title} />
           <p>{game.short_description}</p>

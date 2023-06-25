@@ -1,0 +1,11 @@
+.card-game {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.game-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
