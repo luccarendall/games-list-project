@@ -23,7 +23,7 @@ const App = () => {
           setErrMsg(msg);
           if (apiDataSuccessfully === true);
           // window.location.reload(); // Atualiza a página em caso de erro
-        }, 5000);
+        }, 5001);
 
         const response = await axios.get(url, { headers });
         clearTimeout(timeout); // Cancela o timeout
@@ -33,7 +33,22 @@ const App = () => {
         }
       } catch (error) {
         console.error(error);
-        if (apiDataSuccessfully === true);
+        if (apiDataSuccessfully === true) {
+          const status = error.response?.status;
+          switch (status) {
+            case 500:
+            case 502:
+            case 503:
+            case 504:
+            case 507:
+            case 508:
+            case 509:
+              setErrMsg("O servidor falhou em responder. Tente recarregar a página.");
+              break;
+            default:
+              setErrMsg("O servidor não conseguiu responder por agora. Tente novamente mais tarde.");
+          }
+        }
       }
     };
 
