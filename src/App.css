@@ -8,6 +8,7 @@ p,
 input {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 body,
@@ -36,6 +37,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden
 }
 
 .list-game {
@@ -89,7 +91,7 @@ body {
   margin-bottom: 5px;
 }
 
-#genre {
+#genre-in-card {
   color: #141414;
   margin-top: 5px;
 }
@@ -111,13 +113,20 @@ body::-webkit-scrollbar-thumb {
     100% { transform: rotate(360deg); }
   }
 
+  .main-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .loading {
     width: 100px;
     height: 100px;
-    position: fixed;
-    top: 43%;
-    left: 43.9%;
-    transform: translate(-50%, -50%);
     border: 10px solid #ffffff;
     border-top-color: #8a2ce2;
     border-radius: 50%;
@@ -156,6 +165,7 @@ body::-webkit-scrollbar-thumb {
     border-radius: 5px;
     margin-right: 10px;
     font-weight: bold;
+    color: #111111;
   }
 
   button.clearBtn {
@@ -163,11 +173,11 @@ body::-webkit-scrollbar-thumb {
     border: none;
     border-radius: 5px;
     background-color: #8a2ce2;
-    color: #fff;
+    color: #ffffff;
     cursor: pointer;
   }
 
-  .genres {
+  /* .genres {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -178,6 +188,29 @@ body::-webkit-scrollbar-thumb {
     margin-bottom: 10px;
     font-size: 1em;
     color: #ffffff;
+  } */
+
+  /* https://pt.stackoverflow.com/questions/294247/como-quebrar-div-em-duas-colunas */
+  .genres {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 98%; /* Largura desejada para a div .genres */
+    margin-left: auto; /* Centralizar a div horizontalmente */
+    margin-right: auto; /* Centralizar a div horizontalmente */
+    border: 3px solid #ffffff02;
+    vertical-align: middle;
+    border-radius: 8px;
+    box-shadow: 1px 2px 4px #1f26875e;
+    font-size: 0.8em;
+    margin-bottom: 10px;
+  }
+
+  .individual-genre {
+    box-sizing: border-box;
+    padding: 1rem;
+    margin: 1rem;
+    width: calc((100% / 3) - 2rem);
   }
 
   .genres label {

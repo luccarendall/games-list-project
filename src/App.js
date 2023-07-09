@@ -115,6 +115,7 @@ const App = () => {
               <label key={genre}>
                 <input
                   type="checkbox"
+                  className='individual-genre'
                   name="genre"
                   value={genre}
                   checked={genreFilter === genre}
@@ -132,7 +133,7 @@ const App = () => {
                 <h2 className="title">{game.title}</h2>
                 <img src={game.thumbnail} alt={game.title} />
                 <p>{game.short_description}</p>
-                <p id='genre'>{game.genre}</p>
+                <p id='genre-in-card'>{game.genre}</p>
               </li>
             ))
           ) : (
@@ -141,7 +142,9 @@ const App = () => {
         </ul>
       </>
     ) : (
+      <div className='main-loading'>
       <p className="loading"></p>
+      </div>
     )}
   </div>
 );
