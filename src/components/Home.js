@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import FilterForm from './Header';
+import Header from './Header';
 import GenreFilter from './GenreFilter';
 import GameList from './GameList';
 import ErrorMessage from './ErrorMessage';
@@ -29,7 +29,7 @@ const Home = () => {
           setErrMsg(msg);
           if (apiDataSuccessfully === true);
           // window.location.reload();
-        }, 5001);
+        }, 5500);
 
         const response = await axios.get(url, { headers });
         clearTimeout(timeout);
@@ -103,8 +103,8 @@ const Home = () => {
     <div>
       {apiData !== undefined && apiData.length > 0 ? (
         <>
-          <FilterForm handleTitleFilter={handleTitleFilter} clearBtn={clearBtn} />
-          <GenreFilter genresList={genresList} genreFilter={genreFilter} handleGenreFilter={handleGenreFilter} />
+          <Header handleTitleFilter={handleTitleFilter} />
+          <GenreFilter clearBtn={clearBtn} genresList={genresList} genreFilter={genreFilter} handleGenreFilter={handleGenreFilter} />
           <GameList filteredData={filteredData} />
         </>
       ) : (

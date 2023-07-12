@@ -1,21 +1,26 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const GenreFilter = ({ genresList, genreFilter, handleGenreFilter }) => {
+const GenreFilter = ({ genresList, genreFilter, handleGenreFilter, clearBtn }) => {
+  const navigate = useNavigate();
+  
+  const handleFav = ({ target }) => {
+    console.log('fui pros favs');
+    navigate('/favorites');
+  };
+
   return (
-    <div className="genres">
-      {genresList.map((genre) => (
-        <label key={genre}>
-          <input
-            type="checkbox"
-            className='individual-genre'
-            name="genre"
-            value={genre}
-            checked={genreFilter === genre}
-            onChange={() => handleGenreFilter(genre)}
-          />
-          {genre}
-        </label>
-      ))}
+    <div className='header-container'>
+      <select className='header-button' value={genreFilter} onChange={(e) => handleGenreFilter(e.target.value)}>
+        <option value="">Todos os gêneros</option>
+        {genresList.map((genre) => (
+          <option key={genre} value={genre}>
+        {genre}
+        </option>
+        ))}
+      </select>
+        <button type="button" onClick={clearBtn} className='header-button'>Limpar filtros</button>
+        <button type="button" onClick={handleFav} className='header-button'>Favoritos</button>
     </div>
   );
 };

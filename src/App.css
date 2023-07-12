@@ -168,7 +168,7 @@ body::-webkit-scrollbar-thumb {
     color: #111111;
   }
 
-  button.clearBtn {
+ /* .clearBtn {
     padding: 8px 16px;
     border: none;
     border-radius: 5px;
@@ -176,6 +176,11 @@ body::-webkit-scrollbar-thumb {
     color: #ffffff;
     cursor: pointer;
   }
+
+  .clearBtn:hover {
+    background-color: #ffffff;
+    color: #b567ff;
+  } */
 
   /* .genres {
     display: flex;
@@ -242,4 +247,8 @@ body::-webkit-scrollbar-thumb {
   .genres input[type="checkbox"]:checked {
     background-color: #292929;
     border: 1px solid #292929;
+  }
+
+  .genres input[type="checkbox"]:hover {
+    background-color: #292929;
   }
