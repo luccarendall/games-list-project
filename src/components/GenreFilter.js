@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 
 const GenreFilter = ({ genresList, genreFilter, handleGenreFilter, clearBtn }) => {
   const navigate = useNavigate();
-  
-  const handleFav = ({ target }) => {
+
+  const handleFav = ({ target }) => { // tranformar em uma função que filtra com base no estado de fav. P isso ela vai preciasr ser criada lá no Home provavelmente
     console.log('fui pros favs');
     navigate('/favorites');
   };
