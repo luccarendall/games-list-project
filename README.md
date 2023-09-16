@@ -1,53 +1,53 @@
-# Game Search App - Documentação
+# Game Search App - Documentation
 <div align="center">
 <img src="https://i.ibb.co/68mss0h/r-1.png" alt="r-1" border="0">
 </div>
 <br/>
-Este é um aplicativo React que permite aos usuários pesquisar jogos usando uma barra de pesquisa. O aplicativo busca dados de jogos de uma API e os exibe em formato de lista. Os usuários podem inserir um termo de pesquisa na barra de pesquisa, e o aplicativo filtrará os jogos com base no título.
+This is a React application that allows users to search for games using a search bar. The app retrieves game data from an API and displays it in a list format. Users can input a search term into the search bar, and the app will filter games based on the title.
 
-## Acesse a aplicação [clicando aqui](https://games-list-project.vercel.app/)
+## Access the application [by clicking here](https://games-list-project.vercel.app/)
 
-### Instalação
+### Installation
 
-Para executar este aplicativo localmente, siga estas etapas:
+To run this application locally, follow these steps:
 
-1. Clone o repositório do GitHub:
+1. Clone the GitHub repository:
 ```git clone git@github.com:luccarendall/games-list-project.git```
-2. Navegue até o diretório do projeto: ```cd games-list-project```
-3. Instale as dependências: ```npm install```
-4. Inicie o servidor de desenvolvimento: ```npm start```
+2. Navigate to the project directory: ```cd games-list-project```
+3. Install dependencies: ```npm install```
+4. Start the development server: ```npm start```
 
-5. O aplicativo será executado em `http://localhost:3000`.
+5. The app will run at `http://localhost:3000`.
 
-### Uso
+### Usage
 
-Ao abrir o aplicativo, você verá uma barra de pesquisa no topo da página. Digite um termo de pesquisa na barra e os jogos serão carregados da API e exibidos em uma lista abaixo da barra de pesquisa. Se houver jogos correspondentes ao termo de pesquisa, eles serão exibidos com seus títulos, imagens e descrições curtas. Caso contrário, uma mensagem informando que nenhum jogo foi encontrado será exibida.
+Upon opening the app, you will see a search bar at the top of the page. Enter a search term into the bar, and the games will be fetched from the API and displayed in a list below the search bar. If there are games that match the search term, they will be displayed with their titles, images, and short descriptions. Otherwise, a message stating that no games were found will be shown.
 
 <div align="center">
 <img src="https://media.giphy.com/media/1kgxjgjFbYdHGwv88x/giphy.gif" alt="Gif" width="600" height="240">
   <br/>
-Você pode continuar pesquisando diferentes termos de pesquisa para refinar os resultados.
+You can continue searching for different search terms to refine the results.
 </div>
 
+### Features
 
-### Funcionalidades
+- Game search by title: The app filters games based on the title provided in the search bar. The filtering is done in real-time as the user types.
+- Coming Soon: Genre filtering
 
-- Pesquisa de jogos por título: O aplicativo filtra os jogos com base no título fornecido na barra de pesquisa. A filtragem é feita em tempo real à medida que o usuário digita.
-- Em breve: Filtro por gênero
-
-### Tecnologias Utilizadas
+### Technologies Used
 
 - React + Hooks
 - Axios
 - CSS
-- Javascript
+- JavaScript
 
-### O que faria em mais tempo
-- Componentizar cada estrutura respeitando o princípio da responsabilidade única
-- Usar Context ou Redux para gerenciar o estado global de forma mais dinâmica
-- Adicionar testes unitários
-- Adicionar botões para remover individualmente os filtros aplicados ou todos de uma vez
+### What I Would Do with More Time
 
-### Autor
+- Componentize each structure respecting the single responsibility principle
+- Use Context or Redux to manage global state more dynamically
+- Add unit tests
+- Add buttons to remove individual applied filters or all filters at once
+
+### Author
 | [<img src="https://avatars.githubusercontent.com/u/92706411?v=4" width=115><br><sub>@luccarendall</sub>](https://github.com/LuccaRendall) |
 | :---: |
